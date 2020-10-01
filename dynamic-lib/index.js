@@ -6,7 +6,7 @@ const ffi = require('ffi');
 // This is an example using the libmath made in auto tools workshop.
 // It won't work, at least you run the scripts 1 and 2 in the libmath
 // directory.
-const stdlib = new ffi.Library('~/libmath/build/usr/lib/libmath', {
+const stdLib = new ffi.Library('/home/erickof/libmath/build/usr/lib/libmath', {
     // This must be an JSON with function name, return value and the arguments
     'add': [
         'double',
@@ -21,5 +21,5 @@ const stdlib = new ffi.Library('~/libmath/build/usr/lib/libmath', {
 
 
 // This is only a test, this must be in the server
-const result = stdlib.add(10, 20);
+const result = stdLib.add(10, 20);
 console.log(result);
