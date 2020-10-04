@@ -1,0 +1,5 @@
+#ifndef LIBSMARTHOME_CAM_H
+#define LIBSMARTHOME_CAM_H
+
+
+#endif /* LIBSMARTHOME_CAM_H */
