@@ -1,4 +1,4 @@
-AC_INIT([libsmarthome], [1.0], [erickobregonf@gmail.com])
+AC_INIT([libsmarthome], [1.0], [person@provider.com])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([m4])
 AM_INIT_AUTOMAKE([foreign -Wall -Werror])
@@ -6,5 +6,5 @@ AC_PROG_CC
 AM_PROG_AR
 LT_INIT
 AC_CONFIG_HEADERS([config.h])
-AC_CONFIG_FILES([Makefile lib/Makefile src/Makefile])
+AC_CONFIG_FILES([Makefile lib/Makefile])
 AC_OUTPUT
