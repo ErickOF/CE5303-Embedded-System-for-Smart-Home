@@ -2,7 +2,7 @@ downloads/
 emuARM/tmp
 emuARM/cache
 emuARM/sstate-cache
-rpi2/tmp
-rpi2/cache
-rpi2/sstate-cache
+rpi*/tmp
+rpi*/cache
+rpi*/sstate-cache
 *__pycache__*
