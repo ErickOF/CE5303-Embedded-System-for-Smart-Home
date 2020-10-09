@@ -6,3 +6,4 @@ rpi*/tmp
 rpi*/cache
 rpi*/sstate-cache
 *__pycache__*
+vscode-bitbake-build/
