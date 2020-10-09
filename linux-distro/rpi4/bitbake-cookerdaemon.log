@@ -4440,3 +4440,7 @@ Running command ['setEventMask', 1, 20, {'BitBake.RunQueue.HashEquiv': 19, 'BitB
 Running command ['getVariable', 'BB_DEFAULT_TASK']
 Running command ['setConfig', 'cmd', 'build']
 Running command ['buildTargets', ['rpi-basic-image'], 'build']
+Processing Client
+Disconnecting Client
+No timeout, exiting.
+Exiting
