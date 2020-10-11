@@ -1,0 +1,114 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SmartHomeRequests",
+		"_postman_id": "86350d01-c27d-ce95-aa01-e473c6744e7b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"url": "http://localhost:5000/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"ErickOF\",\n\t\"password\": \"12345678\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"url": "http://localhost:5000/sign_up",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Erick Andrés Obregón Fonseca\",\n\t\"username\": \"ErickOF\",\n\t\"email\": \"erickobregonf@gmail.com\",\n\t\"password\": \"12345678\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "home",
+			"description": "",
+			"item": [
+				{
+					"name": "Change Light State",
+					"request": {
+						"url": "http://localhost:5000/home/change_light_state",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"room\": \"bedroom\",\n\t\"state\": 0\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Door State",
+					"request": {
+						"url": "http://localhost:5000/home/get_door_state",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"door\": \"bedroom\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Take Photo",
+					"request": {
+						"url": "http://localhost:5000/home/take_photo",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
