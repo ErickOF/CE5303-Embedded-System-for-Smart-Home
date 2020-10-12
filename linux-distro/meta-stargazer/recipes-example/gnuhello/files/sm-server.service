@@ -1,0 +1,11 @@
+[Unit]
+Description=Smart Home Server
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart=-/lib/systemd/system/sm-server.sh
+ExecStop=-/lib/systemd/system/sm-server.sh
+
+[Install]
+WantedBy=multi-user.target

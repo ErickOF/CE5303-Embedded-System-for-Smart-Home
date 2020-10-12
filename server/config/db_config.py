@@ -1,6 +1,6 @@
-USER = 'user'
-PASSWORD = 'user'
-NAME = 'users'
+USER: str = 'user'
+PASSWORD: str = 'user'
+NAME: str = 'users'
 
-URL = f'mongodb+srv://{USER}:{PASSWORD}@cluster0.j8c8x.mongodb.net/{NAME}?retryWrites=true&w=majority'
+URL: str = f'mongodb+srv://{USER}:{PASSWORD}@cluster0.j8c8x.mongodb.net/{NAME}?retryWrites=true&w=majority'
 

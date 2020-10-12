@@ -23,7 +23,7 @@ def pin_mode(pin: int, direction: int) -> int:
     return _pin_mode.value
 
 # int digitalWrite(int pin, int value);
-def pin_mode(pin: int, direction: int) -> int:
+def digital_write(pin: int, direction: int) -> int:
     _pin_mode = gpioman_lib.pinMode
     _pin_mode.restype = c_int
     _pin_mode(c_int(pin), c_int(direction))

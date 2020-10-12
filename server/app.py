@@ -2,7 +2,7 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 
-from config import constants
+from config import server_config as sconf
 from controllers import db
 
 
@@ -110,4 +110,5 @@ def take_photo():
 
 
 if __name__ == '__main__':
-    app.run(host=constants.HOST, port=constants.PORT)
+    app.run(host=sconf.HOST, port=sconf.PORT)
+
