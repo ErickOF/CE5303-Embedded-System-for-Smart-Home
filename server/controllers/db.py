@@ -14,7 +14,7 @@ collection = client.users.users
 
 def create_users_schema():
    """
-   Create the user schema
+   This function creates the user schema.
    """
    # User schema
    user_schema = {
@@ -61,11 +61,14 @@ def create_users_schema():
    if len(required) > 0:
       validator['$jsonSchema']['required'] = required
 
+   # Creating the query
    query = [('collMod', 'users'),
             ('validator', validator)]
 
    try:
+      # Create collection
       client.users.create_collection('users')
+      # Make fields uniques
       client.users.users.create_index([('username', ASCENDING), ('slug', ASCENDING)], unique=True)
       client.users.users.create_index([('email', ASCENDING), ('slug', ASCENDING)], unique=True)
    except CollectionInvalid:
@@ -75,15 +78,41 @@ def create_users_schema():
    command_result = client.users.command(OrderedDict(query))
 
 
-def create_user(user) -> int:
+def create_user(user: dict) -> str:
+   """
+   This function creates a new user.
+
+   Params
+   -------------------------------------------------------------------
+      user: dict
+         A dictionary with name, email, username and password of the
+         new user.
+   
+   Returns
+   -------------------------------------------------------------------
+      The ID of the inserted user or None if the operation fails.
+   """
    try:
       return str(collection.insert(user))
    except WriteError:
       return None
 
-def login(user) -> bool:
+def login(user: dict) -> bool:
+   """
+   This function tries to login an user.
+
+   Params
+   -------------------------------------------------------------------
+      user: dict
+         A dictionary with the username and password.
+   
+   Returns
+   -------------------------------------------------------------------
+      True if the user was found, False otherwise.
+   """
    found_user = collection.find_one(user)
    return True if found_user else False
 
 
+# Create the user schema
 create_users_schema()
