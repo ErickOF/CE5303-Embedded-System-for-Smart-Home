@@ -17,7 +17,7 @@ OUTPUT_MODE: int = 1
 
 FAIL: int = -1
 # When some function reaches the goal, returns 0
-SUCCESS = 0
+SUCCESS: int = 0
 
 
 # Pins values
