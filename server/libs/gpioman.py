@@ -22,14 +22,14 @@ def pin_mode(pin: int, direction: int) -> int:
 
 # int digitalWrite(int pin, int value);
 def digital_write(pin: int, direction: int) -> int:
-    _pin_mode = gpioman_lib.pinMode
-    _pin_mode.restype = c_int
+    _digital_write = gpioman_lib.digitalWrite
+    _digital_write.restype = c_int
 
-    return _pin_mode(c_int(pin), c_int(direction))
+    return _digital_write(c_int(pin), c_int(direction))
 
 # int digitalRead(int pin);
 def digital_read(pin: int) -> int:
-    _digital_read = gpioman_lib.digital_Read
+    _digital_read = gpioman_lib.digitalRead
     _digital_read.restype = c_int
 
     return _digital_read(c_int(pin))

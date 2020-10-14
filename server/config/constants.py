@@ -1,5 +1,5 @@
 # Dynamic library path
-SRC_LIB: str = '/usr/lib/libgpioman.so'
+SRC_LIB: str = '/usr/lib/libgpioman.so.0'
 
 
 # When writing out one logic voltage
@@ -23,14 +23,16 @@ SUCCESS: int = 0
 # Pins values
 PINS: dict = {
     'rooms': {
-        'living-room': 0,
-        'bedroom1': 1,
-        'bedroom2': 2,
-        'kitchen': 3,
-        'other': 4
+        'living-room': 2,
+        'bedroom1': 3,
+        'bedroom2': 4,
+        'kitchen': 17,
+        'other': 27
     },
     'doors': {
         '1': 5,
-        '2': 6
+        '2': 6,
+        '3': 20,
+        '4': 21
     }
 }

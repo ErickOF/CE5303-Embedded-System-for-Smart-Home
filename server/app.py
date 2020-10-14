@@ -99,7 +99,7 @@ def change_light_state():
     }
 
     # Check if the pin is valid
-    if (room in PINS['rooms']):
+    if (room not in PINS['rooms']):
         response['error'] = True
         response['msg'] = '{room} not found.'
     # Check if the state is valid
@@ -110,14 +110,14 @@ def change_light_state():
         # Turn on the light
         if state == HIGH:
             # Check if the light was turned on
-            if lights.turn_on_light(room) == FAIL:
+            if lights.turn_on_light(room) != FAIL:
                 response['msg'] = f'{room} light turned on.'
             else:
                 response['msg'] = f'{room} light couldn\'t be turned on.'
         # Turn off the light
         else:
             # Check if the light was turned off
-            if lights.turn_off_light(room) == FAIL:
+            if lights.turn_off_light(room) != FAIL:
                 response['msg'] = f'{room} light turned off.'
             else:
                 response['msg'] = f'{room} light couldn\'t be turned off.'
@@ -132,7 +132,7 @@ def get_door_state():
     """
     # Get params
     body = request.json
-    room = body['room']
+    room = body['door']
 
     # Generic response
     response = {
@@ -142,12 +142,12 @@ def get_door_state():
     }
 
     # Check if the pin is valid
-    if (room in PINS['rooms']):
+    if (room not in PINS['doors']):
         response['error'] = True
         response['msg'] = '{room} not found.'
     else:
         response['data'] = {
-            'state': get_door_state(room)
+            'state': doors.get_state(room)
         }
 
     return jsonify(response)
@@ -164,5 +164,7 @@ def take_photo():
 
 
 if __name__ == '__main__':
+    lights.start()
+    doors.start()
     app.run(host=sconf.HOST, port=sconf.PORT)
 
