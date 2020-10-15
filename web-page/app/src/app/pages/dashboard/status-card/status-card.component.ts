@@ -33,15 +33,16 @@ export class StatusCardComponent {
   constructor(
     public lightService: LightsService,
     public doorService: DoorsService,
-  ) {
+  ) { }
+
+  public ngOnInit() {
     if (this.type !== 'primary') {
-      setTimeout(() => this.getDoorState(), 500);
       this.getDoorState();
     } else {
       this.getLightState();
     }
   }
-
+  
   public changeLightState() {
     this.lightService.changeLightState(this.value, this.on ? 0 : 1)
       .subscribe((response) => {
@@ -68,6 +69,8 @@ export class StatusCardComponent {
         if (!response['error']) {
           this.on = response['data']['state'] !== 0;
         }
-      });
+      
+        setTimeout(() => this.getLightState(), 100);
+      }, (error) => setTimeout(() => this.getLightState(), 100));
   }
 }
