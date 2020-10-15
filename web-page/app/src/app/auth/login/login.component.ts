@@ -11,7 +11,7 @@ import { LoginService } from './../../services/auth/login/login.service';
 export class LoginComponent extends NbLoginComponent {
 
   public _login(value) {
-    if (value.email == 'root' && value.password == 'root') {
+    if (value.email === 'root' && value.password === 'root') {
       this.router.navigate(['pages/iot-dashboard']);
     }
   }

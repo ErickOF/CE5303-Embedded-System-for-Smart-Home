@@ -9,7 +9,7 @@ import {
   NbAlertModule,
   NbButtonModule,
   NbCheckboxModule,
-  NbInputModule
+  NbInputModule,
 } from '@nebular/theme';
 
 import { LoginComponent } from './login/login.component';
@@ -28,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     NbAuthModule,
   ],
   declarations: [
-    LoginComponent
+    LoginComponent,
   ],
 })
 export class AuthModule {
