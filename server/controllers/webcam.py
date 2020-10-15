@@ -10,7 +10,7 @@ def take_photo() -> str:
     ------------------------------------------------------------------
         The path where the image was stored.
     """
-    image_name = f'src/{datetime.datetime.now()}.jpg'.replace(' ', '_')
+    image_name = f'/home/root/server/src/{datetime.datetime.now()}.jpg'.replace(' ', '_')
     os.system(f'fswebcam --no-banner {image_name}')
 
     return image_name

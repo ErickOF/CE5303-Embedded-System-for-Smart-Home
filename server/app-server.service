@@ -1,0 +1,14 @@
+[Unit]
+Description=Start a python server
+
+[Service]
+Type=simple
+ExecStart=/home/root/server/app.py
+Restart=on-failure
+RestartSec=30
+User=root
+Group=root
+
+
+[Install]
+WantedBy=multi-user.target
