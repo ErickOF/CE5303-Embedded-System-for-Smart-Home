@@ -3,7 +3,7 @@ Description=Start a python server
 
 [Service]
 Type=simple
-ExecStart=/home/root/server/app.py
+ExecStart=python3 /home/root/server/app.py
 Restart=on-failure
 RestartSec=30
 User=root

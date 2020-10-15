@@ -10,7 +10,7 @@ export class UserService extends UserData {
   private users = {
     nick: {
       name: 'Erick Obregón',
-      picture: 'https://avatars3.githubusercontent.com/u/22231306?s=460&u=b2d4a9544fdf001456e8e543cf68c07974d2c09b&v=4'
+      picture: 'https://avatars3.githubusercontent.com/u/22231306?s=460&u=b2d4a9544fdf001456e8e543cf68c07974d2c09b&v=4',
     },
     eva: {
       name: 'Eva Moor',
