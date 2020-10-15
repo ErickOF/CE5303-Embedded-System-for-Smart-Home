@@ -16,7 +16,7 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
 
   cameras: Camera[];
   selectedCamera: Camera;
-  isSingleView = false;
+  isSingleView = true;
   actionSize: NbComponentSize = 'medium';
 
   constructor(

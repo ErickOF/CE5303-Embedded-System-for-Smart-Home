@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import json, jsonify
 from flask import request, send_file
+from flask_cors import CORS
 
 from config import server_config as sconf
 from config.constants import *
@@ -14,7 +15,8 @@ from controllers import lights
 # Creating an basic app
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 @app.route('/', methods=['GET'])
