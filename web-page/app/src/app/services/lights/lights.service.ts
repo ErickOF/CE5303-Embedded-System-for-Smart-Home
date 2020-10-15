@@ -9,7 +9,7 @@ import { Urls } from './../../config/urls';
 export class LightsService {
   constructor(private http: HttpClient) { }
 
-  public change_light_state(room: string, state: number) {
+  public changeLightState(room: string, state: number) {
     const body = { room, state };
 
     return this.http
@@ -18,6 +18,18 @@ export class LightsService {
           headers: new HttpHeaders()
             .set('Content-Type', 'application/json')
             .set('Access-Control-Allow-Origin', '*'),
+        },
+      );
+  }
+
+  public getLightState(room: string) {
+    const body = { room };
+
+    return this.http
+      .post(Urls.GET_LIGHT_STATE_URL, body,
+        {
+          headers: new HttpHeaders()
+            .set('Content-Type', 'application/json'),
         },
       );
   }

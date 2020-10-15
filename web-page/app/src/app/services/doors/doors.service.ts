@@ -9,7 +9,7 @@ import { Urls } from './../../config/urls';
 export class DoorsService {
   constructor(private http: HttpClient) { }
 
-  public get_door_state(door: string) {
+  public getDoorState(door: string) {
     const body = { door };
 
     return this.http

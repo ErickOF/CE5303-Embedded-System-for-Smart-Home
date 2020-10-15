@@ -5,7 +5,7 @@
 
   <div class="grid-container">
     <div class="single-view">
-      <div class="camera" [style.background-image]="'url('+ img +')'">
+      <div class="camera" [style.background-image]="'url('+ img +')'" *ngIf="img != ''">
         <span class="camera-name">Camera</span>
       </div>
     </div>

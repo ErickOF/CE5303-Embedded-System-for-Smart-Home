@@ -9,7 +9,7 @@ import { DoorsService } from '../../../services/doors/doors.service';
   selector: 'ngx-status-card',
   styleUrls: ['./status-card.component.scss'],
   template: `
-    <nb-card (click)="type == 'primary' ? this.change_light_state() : this.get_door_state()" [ngClass]="{'off': !on}">
+    <nb-card (click)="type == 'primary' ? this.changeLightState() : this.getDoorState()" [ngClass]="{'off': !on}">
       <div class="icon-container">
         <div class="icon status-{{ type }}">
           <ng-content></ng-content>
@@ -28,18 +28,22 @@ export class StatusCardComponent {
   @Input() type: string;
   @Input() on = false;
   @Input() value: string;
+  cont = 0;
 
   constructor(
     public lightService: LightsService,
     public doorService: DoorsService,
   ) {
     if (this.type !== 'primary') {
-      this.get_door_state();
+      setTimeout(() => this.getDoorState(), 500);
+      this.getDoorState();
+    } else {
+      this.getLightState();
     }
   }
 
-  public change_light_state() {
-    this.lightService.change_light_state(this.value, this.on ? 0 : 1)
+  public changeLightState() {
+    this.lightService.changeLightState(this.value, this.on ? 0 : 1)
       .subscribe((response) => {
         if (!response['error']) {
           this.on = !this.on;
@@ -47,8 +51,19 @@ export class StatusCardComponent {
       });
   }
 
-  public get_door_state() {
-    this.doorService.get_door_state(this.value)
+  public getDoorState() {
+    this.doorService.getDoorState(this.value)
+      .subscribe((response) => {
+        if (!response['error']) {
+          this.on = response['data']['state'] !== 0;
+        }
+
+        setTimeout(() => this.getDoorState(), 100);
+      }, (error) => setTimeout(() => this.getDoorState(), 100));
+  }
+
+  public getLightState() {
+    this.lightService.getLightState(this.value)
       .subscribe((response) => {
         if (!response['error']) {
           this.on = response['data']['state'] !== 0;
