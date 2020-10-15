@@ -57,8 +57,8 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
     this.webCamService
       .takePhoto()
       .subscribe((response) => {
-        this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response).reduce((data, byte) => data + String.fromCharCode(byte), ''));
-        console.log(this.img);
+        this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response)
+          .reduce((data, byte) => data + String.fromCharCode(byte), ''));
       });
   }
 }

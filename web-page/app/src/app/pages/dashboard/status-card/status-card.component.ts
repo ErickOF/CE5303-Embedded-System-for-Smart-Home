@@ -33,7 +33,7 @@ export class StatusCardComponent {
     public lightService: LightsService,
     public doorService: DoorsService,
   ) {
-    if (this.type != 'primary') {
+    if (this.type !== 'primary') {
       this.get_door_state();
     }
   }
@@ -51,7 +51,7 @@ export class StatusCardComponent {
     this.doorService.get_door_state(this.value)
       .subscribe((response) => {
         if (!response['error']) {
-          this.on = response['data']['state'] != 0;
+          this.on = response['data']['state'] !== 0;
         }
       });
   }
