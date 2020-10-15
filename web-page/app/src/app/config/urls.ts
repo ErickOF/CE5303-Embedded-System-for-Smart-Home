@@ -1,7 +1,7 @@
 
 export class Urls {
     // Local url
-    public static URL = 'http://192.168.1.126:5000';
+    public static URL = 'http://192.168.100.4:5000';
     // URLS
     public static HOME_URL = `${Urls.URL}/home`;
     public static CHANGE_LIGHT_STATE_URL = `${Urls.HOME_URL}/change_light_state`;
