@@ -1,21 +1,21 @@
 <nb-card size="giant">
   <nb-card-header>
-    Cámeras de seguridad
+    Security Camera
   </nb-card-header>
 
   <div class="grid-container">
     <div class="single-view">
       <div class="camera" [style.background-image]="'url('+ img +')'">
-        <span class="camera-name">Cámara</span>
+        <span class="camera-name">Camera</span>
       </div>
     </div>
   </div>
 
   <nb-card-footer>
-    <nb-actions [size]="actionSize" fullWidth>
+    <nb-actions [size]="actionSize" fullWidth (click)="takePhoto()">
       <nb-action>
         <nb-icon icon="pause-circle-outline" pack="eva"></nb-icon>
-        Tomar foto
+        Take photo
       </nb-action>
     </nb-actions>
   </nb-card-footer>

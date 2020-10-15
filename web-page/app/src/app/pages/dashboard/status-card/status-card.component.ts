@@ -18,7 +18,7 @@ import { DoorsService } from '../../../services/doors/doors.service';
 
       <div class="details">
         <div class="title h5">{{ title }}</div>
-        <div class="status paragraph-2">{{ on ? (type == 'primary' ? 'Encendida' : 'Abierta') : (type == 'primary' ? 'Apagada' : 'Cerrada') }}</div>
+        <div class="status paragraph-2">{{ on ? (type == 'primary' ? 'On' : 'Open') : (type == 'primary' ? 'Off' : 'Close') }}</div>
       </div>
     </nb-card>
   `,
@@ -27,14 +27,19 @@ export class StatusCardComponent {
   @Input() title: string;
   @Input() type: string;
   @Input() on = false;
+  @Input() value: string;
 
   constructor(
     public lightService: LightsService,
     public doorService: DoorsService,
-  ) { }
+  ) {
+    if (this.type != 'primary') {
+      this.get_door_state();
+    }
+  }
 
   public change_light_state() {
-    this.lightService.change_light_state('bedroom1', 1)
+    this.lightService.change_light_state(this.value, this.on ? 0 : 1)
       .subscribe((response) => {
         if (!response['error']) {
           this.on = !this.on;
@@ -43,8 +48,7 @@ export class StatusCardComponent {
   }
 
   public get_door_state() {
-    console.log('door')
-    this.doorService.get_door_state('1')
+    this.doorService.get_door_state(this.value)
       .subscribe((response) => {
         if (!response['error']) {
           this.on = response['data']['state'] != 0;

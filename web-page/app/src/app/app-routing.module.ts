@@ -45,7 +45,7 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
+  { path: '', redirectTo: 'pages/iot-dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'pages' },
 ];
 

@@ -8,6 +8,7 @@ interface CardSettings {
   title: string;
   iconClass: string;
   type: string;
+  value: string;
 }
 
 @Component({
@@ -21,33 +22,75 @@ export class DashboardComponent implements OnDestroy {
 
   solarValue: number;
   lightCard: CardSettings = {
-    title: 'Estado Luz',
+    title: 'Light',
     iconClass: 'nb-lightbulb',
     type: 'primary',
+    value: '',
   };
-  rollerShadesCard: CardSettings = {
-    title: 'Estado Puerta',
+  doorCard: CardSettings = {
+    title: 'Door',
     iconClass: 'nb-roller-shades',
     type: 'success',
-  };
-  wirelessAudioCard: CardSettings = {
-    title: 'Wireless Audio',
-    iconClass: 'nb-audio',
-    type: 'info',
-  };
-  coffeeMakerCard: CardSettings = {
-    title: 'Coffee Maker',
-    iconClass: 'nb-coffee-maker',
-    type: 'warning',
+    value: '',
   };
 
   statusCards: string;
 
   commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
-    this.rollerShadesCard,
-    /*this.wirelessAudioCard,
-    this.coffeeMakerCard,*/
+    {
+      ...this.lightCard,
+      title: 'Living Room Light',
+      value: 'living-room',
+      type: 'primary',
+    },
+    {
+      ...this.lightCard,
+      title: 'Bedroom 1 Light',
+      value: 'bedroom1',
+      type: 'primary',
+    },
+    {
+      ...this.lightCard,
+      title: 'Bedroom 2 Light',
+      value: 'bedroom2',
+      type: 'primary',
+    },
+    {
+      ...this.lightCard,
+      title: 'Kitchen Light',
+      value: 'kitchen',
+      type: 'primary',
+    },
+    {
+      ...this.lightCard,
+      title: 'Dinning Room Light',
+      value: 'other',
+      type: 'primary',
+    },
+    {
+      ...this.doorCard,
+      title: 'Bedroom 1 Door',
+      value: '1',
+      type: 'warning',
+    },
+    {
+      ...this.doorCard,
+      title: 'Bedroom 2 Door',
+      value: '2',
+      type: 'warning',
+    },
+    {
+      ...this.doorCard,
+      title: 'Front Door',
+      value: '3',
+      type: 'warning',
+    },
+    {
+      ...this.doorCard,
+      title: 'Back Door',
+      value: '4',
+      type: 'warning',
+    },
   ];
 
   statusCardsByThemes: {
@@ -58,24 +101,7 @@ export class DashboardComponent implements OnDestroy {
   } = {
     default: this.commonStatusCardsSet,
     cosmic: this.commonStatusCardsSet,
-    corporate: [
-      {
-        ...this.lightCard,
-        type: 'warning',
-      },
-      {
-        ...this.rollerShadesCard,
-        type: 'primary',
-      },
-      {
-        ...this.wirelessAudioCard,
-        type: 'danger',
-      },
-      {
-        ...this.coffeeMakerCard,
-        type: 'info',
-      },
-    ],
+    corporate: this.commonStatusCardsSet,
     dark: this.commonStatusCardsSet,
   };
 
