@@ -4,7 +4,7 @@ import { Urls } from './../../config/urls';
 
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DoorsService {
   constructor(private http: HttpClient) { }
