@@ -5,6 +5,9 @@ import { NbComponentSize, NbMediaBreakpointsService, NbThemeService } from '@neb
 
 import { Camera, SecurityCamerasData } from '../../../@core/data/security-cameras';
 
+import { WebCamService } from '../../../services/web-cam/web-cam.service';
+
+
 @Component({
   selector: 'ngx-security-cameras',
   styleUrls: ['./security-cameras.component.scss'],
@@ -18,11 +21,13 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
   selectedCamera: Camera;
   isSingleView = false;
   actionSize: NbComponentSize = 'medium';
+  img = 'assets/images/camera1.jpg';
 
   constructor(
     private themeService: NbThemeService,
     private breakpointService: NbMediaBreakpointsService,
     private securityCamerasService: SecurityCamerasData,
+    private webCamService: WebCamService,
   ) {}
 
   ngOnInit() {
@@ -39,6 +44,8 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
       .subscribe((width: number) => {
         this.actionSize = width > breakpoints.md ? 'medium' : 'small';
       });
+
+    this.takePhoto();
   }
 
   ngOnDestroy() {
@@ -46,8 +53,12 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  selectCamera(camera: any) {
-    this.selectedCamera = camera;
-    this.isSingleView = true;
+  public takePhoto() {
+    this.webCamService
+      .takePhoto()
+      .subscribe((response) => {
+        this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response).reduce((data, byte) => data + String.fromCharCode(byte), ''));
+        console.log(this.img);
+      });
   }
 }
