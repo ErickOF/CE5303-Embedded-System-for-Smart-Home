@@ -30,7 +30,7 @@ export class DashboardComponent implements OnDestroy {
   doorCard: CardSettings = {
     title: 'Door',
     iconClass: 'nb-roller-shades',
-    type: 'success',
+    type: 'warning',
     value: '',
   };
 
