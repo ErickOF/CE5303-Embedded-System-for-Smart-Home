@@ -126,6 +126,32 @@ def change_light_state():
 
     return jsonify(response)
 
+@app.route('/home/get_light_state', methods=['POST'])
+def get_light_state():
+    """
+    This function is used to get a door state.
+    """
+    # Get params
+    body = request.json
+    room = body['room']
+
+    # Generic response
+    response = {
+        'error': False,
+        'data': None,
+        'msg': None
+    }
+
+    # Check if the pin is valid
+    if (room not in PINS['rooms']):
+        response['error'] = True
+        response['msg'] = '{room} not found.'
+    else:
+        response['data'] = {
+            'state': lights.get_state(room)
+        }
+
+    return jsonify(response)
 
 @app.route('/home/get_door_state', methods=['POST'])
 def get_door_state():

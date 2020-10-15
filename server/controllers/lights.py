@@ -47,3 +47,26 @@ def turn_off_light(room: str) -> None:
 
     if digital_write(pin, constants.LOW) == constants.FAIL:
         raise ValueError
+
+def get_state(room: str) -> int:
+    """
+    This function returns the current state of a specific door.
+
+    Params
+    ------------------------------------------------------------------
+        room: str
+            Name of the room.
+    
+    Returns
+    ------------------------------------------------------------------
+        the current state of the room door.
+    """
+    pin: int = constants.PINS['rooms'][room]
+
+    # Get the state of the door
+    result = digital_read(pin)
+
+    if (result == constants.FAIL):
+        print('Light Error: {room} in pin {pin} is not available.')
+    
+    return result
