@@ -23,7 +23,7 @@ import { DoorsService } from '../../../services/doors/doors.service';
     </nb-card>
   `,
 })
-export class StatusCardComponent {
+export class StatusCardComponent implements OnInit {
   @Input() title: string;
   @Input() type: string;
   @Input() on = false;
