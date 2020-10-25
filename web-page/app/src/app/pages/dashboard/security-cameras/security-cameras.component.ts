@@ -45,7 +45,12 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
         this.actionSize = width > breakpoints.md ? 'medium' : 'small';
       });
 
-    this.takePhoto();
+    this.webCamService
+      .takePhoto()
+      .subscribe((response) => {
+        this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response)
+          .reduce((data, byte) => data + String.fromCharCode(byte), ''));
+      });
   }
 
   ngOnDestroy() {
@@ -53,13 +58,11 @@ export class SecurityCamerasComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  takePhoto() {
+  takePhoto(): void {
     this.img = '';
-    this.webCamService
-      .takePhoto()
-      .subscribe((response) => {
-        this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response)
-          .reduce((data, byte) => data + String.fromCharCode(byte), ''));
-      });
+    this.webCamService.takePhoto().subscribe((response) => {
+      this.img = 'data:image/jpg;base64,' + btoa(new Uint8Array(response)
+        .reduce((data, byte) => data + String.fromCharCode(byte), ''));
+    });
   }
 }
