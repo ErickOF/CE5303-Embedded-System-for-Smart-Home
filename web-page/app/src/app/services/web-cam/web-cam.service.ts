@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Urls } from './../../config/urls';
+import { Observable, of } from 'rxjs';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Urls } from './../../config/urls';
 export class WebCamService {
   constructor(private http: HttpClient) { }
 
-  public takePhoto() {
+  takePhoto() {
     return this.http
       .get(Urls.TAKE_PHOTO_URL,
         {
