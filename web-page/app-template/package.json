@@ -78,7 +78,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~17.3.2",
-    "@angular/cli": "^10.2.4",
+    "@angular/cli": "^17.3.3",
     "@angular/compiler-cli": "^10.0.10",
     "@angular/language-service": "10.0.10",
     "@compodoc/compodoc": "1.1.19",
