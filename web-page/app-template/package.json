@@ -33,7 +33,7 @@
     "@akveo/ng2-completer": "^9.0.1",
     "@angular/animations": "^10.0.10",
     "@angular/cdk": "10.1.1",
-    "@angular/common": "^10.0.10",
+    "@angular/common": "^19.2.16",
     "@angular/compiler": "^10.0.10",
     "@angular/core": "^11.0.5",
     "@angular/forms": "^10.0.10",
