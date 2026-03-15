@@ -8,6 +8,7 @@ import { AnalyticsService } from './@core/utils/analytics.service';
 import { SeoService } from './@core/utils/seo.service';
 
 @Component({
+  standalone: false,
   selector: 'ngx-app',
   template: '<router-outlet></router-outlet>',
 })

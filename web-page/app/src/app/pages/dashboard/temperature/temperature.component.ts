@@ -5,6 +5,7 @@ import { takeWhile } from 'rxjs/operators';
 import { forkJoin } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'ngx-temperature',
   styleUrls: ['./temperature.component.scss'],
   templateUrl: './temperature.component.html',

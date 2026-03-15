@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NbComponentShape, NbComponentSize, NbComponentStatus } from '@nebular/theme';
 
 @Component({
+  standalone: false,
   selector: 'ngx-buttons',
   styleUrls: ['./buttons.component.scss'],
   templateUrl: './buttons.component.html',

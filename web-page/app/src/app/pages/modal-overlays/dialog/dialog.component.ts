@@ -4,6 +4,7 @@ import { ShowcaseDialogComponent } from './showcase-dialog/showcase-dialog.compo
 import { DialogNamePromptComponent } from './dialog-name-prompt/dialog-name-prompt.component';
 
 @Component({
+  standalone: false,
   selector: 'ngx-dialog',
   templateUrl: 'dialog.component.html',
   styleUrls: ['dialog.component.scss'],

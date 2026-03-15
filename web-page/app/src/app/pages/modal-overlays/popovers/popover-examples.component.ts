@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'ngx-popover-tabs',
   template: `
     <nb-tabset>
@@ -21,6 +22,7 @@ export class NgxPopoverTabsComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'ngx-popover-form',
   template: `
     <div class="p-4">
@@ -43,6 +45,7 @@ export class NgxPopoverFormComponent {
 }
 
 @Component({
+  standalone: false,
   selector: 'ngx-popover-card',
   template: `
     <nb-card class="popover-card">

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NbWindowRef } from '@nebular/theme';
 
 @Component({
+  standalone: false,
   template: `
     <form class="form">
       <label for="subject">Subject:</label>

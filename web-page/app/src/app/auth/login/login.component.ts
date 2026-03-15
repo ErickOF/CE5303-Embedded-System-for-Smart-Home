@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
 import { LoginService } from './../../services/auth/login/login.service';
 
 @Component({
+  standalone: false,
   selector: 'ngx-login',
   templateUrl: './login.component.html',
 })

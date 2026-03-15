@@ -5,6 +5,7 @@ import { takeWhile } from 'rxjs/operators';
 import { TrafficChartData } from '../../../@core/data/traffic-chart';
 
 @Component({
+  standalone: false,
   selector: 'ngx-traffic',
   styleUrls: ['./traffic.component.scss'],
   template: `

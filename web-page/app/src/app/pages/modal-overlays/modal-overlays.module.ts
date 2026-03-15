@@ -48,15 +48,6 @@ const COMPONENTS = [
   TooltipComponent,
 ];
 
-const ENTRY_COMPONENTS = [
-  ShowcaseDialogComponent,
-  DialogNamePromptComponent,
-  WindowFormComponent,
-  NgxPopoverCardComponent,
-  NgxPopoverFormComponent,
-  NgxPopoverTabsComponent,
-];
-
 const MODULES = [
   FormsModule,
   ThemeModule,
@@ -85,9 +76,6 @@ const SERVICES = [
   ],
   providers: [
     ...SERVICES,
-  ],
-  entryComponents: [
-    ...ENTRY_COMPONENTS,
   ],
 })
 export class ModalOverlaysModule {

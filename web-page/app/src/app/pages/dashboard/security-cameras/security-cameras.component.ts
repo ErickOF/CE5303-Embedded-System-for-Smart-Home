@@ -9,6 +9,7 @@ import { WebCamService } from '../../../services/web-cam/web-cam.service';
 
 
 @Component({
+  standalone: false,
   selector: 'ngx-security-cameras',
   styleUrls: ['./security-cameras.component.scss'],
   templateUrl: './security-cameras.component.html',

@@ -5,6 +5,7 @@ import { LayoutService } from '../../../../@core/utils';
 import { ElectricityChart } from '../../../../@core/data/electricity';
 
 @Component({
+  standalone: false,
   selector: 'ngx-electricity-chart',
   styleUrls: ['./electricity-chart.component.scss'],
   template: `

@@ -15,6 +15,7 @@ let uniqueId = 0;
 const VIEW_BOX_SIZE = 300;
 
 @Component({
+  standalone: false,
   selector: 'ngx-temperature-dragger',
   templateUrl: './temperature-dragger.component.html',
   styleUrls: ['./temperature-dragger.component.scss'],

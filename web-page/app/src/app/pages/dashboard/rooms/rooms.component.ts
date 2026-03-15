@@ -3,6 +3,7 @@ import { NbThemeService, NbMediaBreakpoint, NbMediaBreakpointsService } from '@n
 import { map } from 'rxjs/operators';
 
 @Component({
+  standalone: false,
   selector: 'ngx-rooms',
   styleUrls: ['./rooms.component.scss'],
   template: `
@@ -20,7 +21,7 @@ import { map } from 'rxjs/operators';
 export class RoomsComponent implements OnDestroy {
 
   @HostBinding('class.expanded')
-  private expanded: boolean;
+  expanded: boolean;
   private selected: number;
 
   isDarkTheme: boolean;

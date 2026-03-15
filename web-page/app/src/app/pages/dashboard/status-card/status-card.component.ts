@@ -6,6 +6,7 @@ import { DoorsService } from '../../../services/doors/doors.service';
 
 
 @Component({
+  standalone: false,
   selector: 'ngx-status-card',
   styleUrls: ['./status-card.component.scss'],
   template: `

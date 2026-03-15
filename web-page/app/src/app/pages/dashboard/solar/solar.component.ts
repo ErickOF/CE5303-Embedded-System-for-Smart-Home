@@ -5,6 +5,7 @@ import { NbThemeService } from '@nebular/theme';
 declare const echarts: any;
 
 @Component({
+  standalone: false,
   selector: 'ngx-solar',
   styleUrls: ['./solar.component.scss'],
   template: `

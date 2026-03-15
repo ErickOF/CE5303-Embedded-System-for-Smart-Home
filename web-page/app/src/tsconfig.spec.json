@@ -4,15 +4,12 @@
     "outDir": "../out-tsc/spec",
     "baseUrl": "./",
     "types": [
-      "jasmine",
+      "jest",
       "node"
     ]
   },
-  "files": [
-    "test.ts",
-    "polyfills.ts"
-  ],
   "include": [
+    "../setup-jest.ts",
     "**/*.spec.ts",
     "**/*.d.ts"
   ]
