@@ -79,6 +79,6 @@
     "jsdom": "^29.1.1",
     "test-exclude": "^8.0.0",
     "uuid": "^11.1.1",
-    "webpack-dev-server": "^5.2.4"
+    "webpack-dev-server": "^5.2.5"
   }
 }
