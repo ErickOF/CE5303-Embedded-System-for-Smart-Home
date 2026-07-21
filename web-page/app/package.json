@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@angular/animations": "^21.2.18",
-    "@angular/cdk": "20.2.0",
+    "@angular/cdk": "21.0.0",
     "@angular/common": "^21.2.18",
     "@angular/compiler": "^21.2.18",
     "@angular/core": "^21.2.18",
@@ -69,7 +69,9 @@
   "overrides": {
     "babel-plugin-istanbul": "^8.0.0",
     "glob": "^13.0.6",
-    "js-yaml": "3.15.0",
+    "@istanbuljs/load-nyc-config": {
+      "js-yaml": "3.15.0"
+    },
     "cosmiconfig": {
       "js-yaml": "4.3.0"
     },
