@@ -9,6 +9,8 @@
 
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
+// Bootstrap 5.3.8's grid mixin expects this map when imported directly.
+$gutters: $spacers;
 @import '~bootstrap/scss/mixins';
 @import '~bootstrap/scss/grid';
 
