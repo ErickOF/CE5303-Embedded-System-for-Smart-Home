@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^21.2.20",
-    "@angular/cli": "^21.2.20",
+    "@angular/cli": "^21.2.27",
     "@angular/compiler-cli": "^21.2.19",
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@types/jest": "^30.0.0",
